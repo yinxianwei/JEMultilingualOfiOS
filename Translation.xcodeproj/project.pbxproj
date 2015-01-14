@@ -12,6 +12,7 @@
 		D06D748A1A663CF700D3ADE0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D06D74891A663CF700D3ADE0 /* Images.xcassets */; };
 		D06D748D1A663CF700D3ADE0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D06D748B1A663CF700D3ADE0 /* MainMenu.xib */; };
 		D06D74991A663CF700D3ADE0 /* TranslationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D06D74981A663CF700D3ADE0 /* TranslationTests.m */; };
+		D06D74A91A6651E200D3ADE0 /* JETranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = D06D74A81A6651E200D3ADE0 /* JETranslation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		D06D74921A663CF700D3ADE0 /* TranslationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TranslationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06D74971A663CF700D3ADE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D06D74981A663CF700D3ADE0 /* TranslationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TranslationTests.m; sourceTree = "<group>"; };
+		D06D74A71A6651E200D3ADE0 /* JETranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JETranslation.h; sourceTree = "<group>"; };
+		D06D74A81A6651E200D3ADE0 /* JETranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JETranslation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 			children = (
 				D06D74841A663CF700D3ADE0 /* AppDelegate.h */,
 				D06D74851A663CF700D3ADE0 /* AppDelegate.m */,
+				D06D74A71A6651E200D3ADE0 /* JETranslation.h */,
+				D06D74A81A6651E200D3ADE0 /* JETranslation.m */,
 				D06D74891A663CF700D3ADE0 /* Images.xcassets */,
 				D06D748B1A663CF700D3ADE0 /* MainMenu.xib */,
 				D06D74821A663CF700D3ADE0 /* Supporting Files */,
@@ -210,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D06D74A91A6651E200D3ADE0 /* JETranslation.m in Sources */,
 				D06D74881A663CF700D3ADE0 /* main.m in Sources */,
 				D06D74861A663CF700D3ADE0 /* AppDelegate.m in Sources */,
 			);

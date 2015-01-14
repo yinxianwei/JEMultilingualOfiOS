@@ -9,6 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+@property (unsafe_unretained) IBOutlet NSTextView *textView1;
+@property (unsafe_unretained) IBOutlet NSTextView *textView2;
+- (IBAction)translation:(id)sender;
+- (IBAction)fromClick:(id)sender;
+- (IBAction)toClick:(id)sender;
+- (IBAction)check:(id)sender;
 
 
 @end

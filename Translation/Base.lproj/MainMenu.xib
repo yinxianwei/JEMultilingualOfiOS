@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6233" systemVersion="14A329f" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6233"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -11,8 +12,10 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="">
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="textView1" destination="Da2-TH-1gO" id="L6D-hP-NEQ"/>
+                <outlet property="textView2" destination="WYK-Ce-V2q" id="av6-LF-qoi"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -669,12 +672,282 @@
         <window title="Translation" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1177"/>
+            <rect key="contentRect" x="335" y="390" width="766" height="512"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
+            <value key="minSize" type="size" width="766" height="512"/>
+            <value key="maxSize" type="size" width="766" height="512"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="766" height="512"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIB-os-KvS">
+                        <rect key="frame" x="467" y="20" width="279" height="472"/>
+                        <clipView key="contentView" id="4jy-o5-UAf">
+                            <rect key="frame" x="1" y="1" width="223" height="133"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="WYK-Ce-V2q">
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="262" height="470"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="262" height="470"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="i2V-7t-MMG">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="YdH-4r-AKZ">
+                            <rect key="frame" x="224" y="1" width="15" height="133"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="ShN-LA-1vf">
+                        <rect key="frame" x="349" y="100" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="V7K-im-Ji5"/>
+                            <constraint firstAttribute="height" constant="59" id="ino-jH-1ZD"/>
+                        </constraints>
+                        <buttonCell key="cell" type="bevel" title="S" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ta0-p3-Hyo">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="36"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="translation:" target="Voe-Tx-rLC" id="bGl-MK-Tvl"/>
+                        </connections>
+                    </button>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Jh8-io-qaQ">
+                        <rect key="frame" x="349" y="281" width="95" height="26"/>
+                        <popUpButtonCell key="cell" type="push" title="自动检测" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="BJd-EF-1xj" id="vgi-u7-Ug1">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="ssG-uF-8uH">
+                                <items>
+                                    <menuItem title="自动检测" state="on" id="BJd-EF-1xj"/>
+                                    <menuItem title="中文" tag="1" id="KXm-2L-dIB"/>
+                                    <menuItem title="英文" tag="2" id="M2R-PF-grm"/>
+                                    <menuItem title="日语" tag="3" id="MO8-WI-Cih"/>
+                                    <menuItem title="韩语" tag="4" id="exi-2t-yMF"/>
+                                    <menuItem title="西班牙语" tag="5" id="YpZ-IM-yYf"/>
+                                    <menuItem title="法语" tag="6" id="zRx-5G-g4y"/>
+                                    <menuItem title="泰语" tag="7" id="buC-Xe-kXG"/>
+                                    <menuItem title="阿拉伯语" tag="8" id="BSk-VG-DSp"/>
+                                    <menuItem title="俄罗斯语" tag="9" id="nuM-eE-Njv"/>
+                                    <menuItem title="葡萄牙语" tag="10" id="e6E-rV-rhw"/>
+                                    <menuItem title="粤语" tag="11" id="c9Z-ee-clq"/>
+                                    <menuItem title="文言文" tag="12" id="JDp-fD-QqG"/>
+                                    <menuItem title="白话文" tag="13" id="TQU-gj-5Lg"/>
+                                    <menuItem title="德语" tag="14" id="whG-Qr-K85"/>
+                                    <menuItem title="意大利语" tag="15" id="lQB-Ho-euU"/>
+                                </items>
+                            </menu>
+                            <connections>
+                                <action selector="fromClick:" target="Voe-Tx-rLC" id="iOr-su-E14"/>
+                            </connections>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qz4-6w-Etl">
+                        <rect key="frame" x="349" y="226" width="95" height="26"/>
+                        <popUpButtonCell key="cell" type="push" title="自动检测" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="MWt-EV-Etk" id="7xG-ql-JEx">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="menu"/>
+                            <menu key="menu" id="iFs-co-80K">
+                                <items>
+                                    <menuItem title="自动检测" state="on" id="MWt-EV-Etk"/>
+                                    <menuItem title="中文" tag="1" id="ZnD-EE-inK"/>
+                                    <menuItem title="英文" tag="2" id="I43-Vf-wGJ"/>
+                                    <menuItem title="日语" tag="3" id="SOO-Qy-868"/>
+                                    <menuItem title="韩语" tag="4" id="aCB-kJ-yli"/>
+                                    <menuItem title="西班牙语" tag="5" id="vRm-rY-A6A"/>
+                                    <menuItem title="法语" tag="6" id="c4B-gc-ixH"/>
+                                    <menuItem title="泰语" tag="7" id="RA7-of-0hP"/>
+                                    <menuItem title="阿拉伯语" tag="8" id="vNd-bm-Mhi"/>
+                                    <menuItem title="俄罗斯语" tag="9" id="p0W-Oc-gSp"/>
+                                    <menuItem title="葡萄牙语" tag="10" id="elT-qV-5ic"/>
+                                    <menuItem title="粤语" tag="11" id="kaX-iz-K0j"/>
+                                    <menuItem title="文言文" tag="12" id="cTa-L0-2pY"/>
+                                    <menuItem title="白话文" tag="13" id="gBM-iI-p6b"/>
+                                    <menuItem title="德语" tag="14" id="6yI-Fx-gUY"/>
+                                    <menuItem title="意大利语" tag="15" id="CsH-fM-YYq"/>
+                                </items>
+                            </menu>
+                            <connections>
+                                <action selector="toClick:" target="Voe-Tx-rLC" id="TG2-WN-puB"/>
+                            </connections>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0V0-XZ-zcE">
+                        <rect key="frame" x="305" y="286" width="39" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="from:" id="JOz-aB-vDT">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JLN-Mc-Sl3">
+                        <rect key="frame" x="323" y="233" width="21" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="to:" id="dvK-Yg-vA4">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="65S-8l-1ob">
+                        <rect key="frame" x="349" y="347" width="64" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="4Fy-hI-AaF"/>
+                            <constraint firstAttribute="height" constant="59" id="7Sw-RF-Wiw"/>
+                        </constraints>
+                        <buttonCell key="cell" type="bevel" title=">" bezelStyle="regularSquare" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lBV-a4-H70">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system" size="36"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="translation:" target="Voe-Tx-rLC" id="p2h-k0-UFq"/>
+                        </connections>
+                    </button>
+                    <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j7L-2p-0x7">
+                        <rect key="frame" x="336" y="449" width="94" height="26"/>
+                        <buttonCell key="cell" type="check" title="普通模式" bezelStyle="regularSquare" imagePosition="left" alignment="left" id="OhZ-wz-hvU">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="check:" target="Voe-Tx-rLC" id="l9O-AL-ZbX"/>
+                        </connections>
+                    </button>
+                    <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yA-hn-kSP">
+                        <rect key="frame" x="20" y="20" width="279" height="472"/>
+                        <clipView key="contentView" id="s0M-y6-qCf">
+                            <rect key="frame" x="1" y="1" width="223" height="133"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Da2-TH-1gO">
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="133"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="textColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="262" height="470"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <attributedString key="textStorage">
+                                        <fragment content="&quot;language&quot;">
+                                            <attributes>
+                                                <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" = ">
+                                            <attributes>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="&quot;">
+                                            <attributes>
+                                                <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="中文">
+                                            <attributes>
+                                                <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="STHeitiSC-Light"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="&quot;">
+                                            <attributes>
+                                                <color key="NSColor" red="0.7686274509803922" green="0.10196078431372549" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=";">
+                                            <attributes>
+                                                <font key="NSFont" size="11" name="Menlo-Regular"/>
+                                                <integer key="NSLigature" value="0"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" defaultTabInterval="26.449999999999999">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="26.450000762939453"/>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <size key="minSize" width="262" height="470"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="aGl-mr-tNK">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="wuP-BC-oTP">
+                            <rect key="frame" x="224" y="1" width="15" height="133"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="65S-8l-1ob" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" constant="-2" id="2bO-nC-7Ar"/>
+                    <constraint firstItem="65S-8l-1ob" firstAttribute="leading" secondItem="6yA-hn-kSP" secondAttribute="trailing" constant="52" id="4TE-b8-oCQ"/>
+                    <constraint firstAttribute="trailing" secondItem="hIB-os-KvS" secondAttribute="trailing" constant="20" symbolic="YES" id="6tZ-Xf-gBk"/>
+                    <constraint firstItem="hIB-os-KvS" firstAttribute="leading" secondItem="65S-8l-1ob" secondAttribute="trailing" constant="56" id="7Pm-SD-vyw"/>
+                    <constraint firstAttribute="bottom" secondItem="6yA-hn-kSP" secondAttribute="bottom" constant="20" symbolic="YES" id="7pW-Su-eBM"/>
+                    <constraint firstItem="ShN-LA-1vf" firstAttribute="leading" secondItem="qz4-6w-Etl" secondAttribute="leading" id="A1S-OH-ZZB"/>
+                    <constraint firstItem="Jh8-io-qaQ" firstAttribute="centerY" secondItem="0V0-XZ-zcE" secondAttribute="centerY" id="BMv-1c-Nel"/>
+                    <constraint firstItem="6yA-hn-kSP" firstAttribute="bottom" secondItem="hIB-os-KvS" secondAttribute="bottom" id="GIO-KK-F8F"/>
+                    <constraint firstItem="6yA-hn-kSP" firstAttribute="top" secondItem="hIB-os-KvS" secondAttribute="top" id="GO7-Ai-y5r"/>
+                    <constraint firstItem="Jh8-io-qaQ" firstAttribute="leading" secondItem="0V0-XZ-zcE" secondAttribute="trailing" constant="9" id="Gxn-OY-dhJ"/>
+                    <constraint firstItem="6yA-hn-kSP" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="I3W-3p-GAq"/>
+                    <constraint firstItem="ShN-LA-1vf" firstAttribute="top" secondItem="qz4-6w-Etl" secondAttribute="bottom" constant="67" id="NpO-Wm-DAE"/>
+                    <constraint firstItem="ShN-LA-1vf" firstAttribute="leading" secondItem="Jh8-io-qaQ" secondAttribute="leading" id="R4G-7X-X0I"/>
+                    <constraint firstItem="6yA-hn-kSP" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="WFA-vx-xj3"/>
+                    <constraint firstItem="qz4-6w-Etl" firstAttribute="top" secondItem="Jh8-io-qaQ" secondAttribute="bottom" constant="34" id="XEa-Aw-b0B"/>
+                    <constraint firstItem="65S-8l-1ob" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="103" id="ceQ-8Y-0M6"/>
+                    <constraint firstItem="ShN-LA-1vf" firstAttribute="leading" secondItem="65S-8l-1ob" secondAttribute="leading" id="cnL-ZQ-lwL"/>
+                    <constraint firstAttribute="bottom" secondItem="ShN-LA-1vf" secondAttribute="bottom" constant="103" id="hZb-lo-tSA"/>
+                    <constraint firstItem="hIB-os-KvS" firstAttribute="leading" secondItem="Jh8-io-qaQ" secondAttribute="trailing" constant="26" id="ler-Jn-7P0"/>
+                    <constraint firstItem="Jh8-io-qaQ" firstAttribute="trailing" secondItem="qz4-6w-Etl" secondAttribute="trailing" id="zFj-Fh-wP7"/>
+                </constraints>
             </view>
+            <point key="canvasLocation" x="60" y="362"/>
         </window>
     </objects>
 </document>
